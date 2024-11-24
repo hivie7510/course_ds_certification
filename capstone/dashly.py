@@ -73,7 +73,7 @@ def get_pie_chart(entered_site):
         site_data = filtered_df.loc[filtered_df['class'] == 1].groupby('Launch Site')['Launch Site'].count().reset_index(name='total')
         fig = px.pie(site_data, values='total', 
         names='Launch Site', 
-        title='Total Succeess Launches By Site')
+        title='Total Success Launches By Site')
         return fig
     else:
         site_data = filtered_df.loc[filtered_df['Launch Site'] == entered_site].groupby('class')['class'].count().reset_index(name='total')
@@ -108,4 +108,3 @@ def get_payload_plot_chart(entered_site, payload):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
